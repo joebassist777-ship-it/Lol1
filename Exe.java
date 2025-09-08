@@ -41,9 +41,9 @@ public class Nike extends Exception {
 
 }
 
-==========================
+========================== 예외 정답
+	
 package exc1;
-//예외 정답
 public class A {
 	void a() {
 		try {
