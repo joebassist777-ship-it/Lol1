@@ -77,6 +77,8 @@ public class A {
 
 
 
+
+
 ================================== 전체 예외 잡기
 package exc1;
 
@@ -139,4 +141,39 @@ public class A {
     }
 }
 
+
+=======
+	public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+
+        a.a(); // ArrayIndexOutOfBoundsException
+        a.a2(new Object()); // ClassCastException
+        a.a3(null); // NullPointerException
+
+        try {
+            a.a4(); // 사용자 정의 예외
+        } catch (Nike e) {
+            System.out.println("Nike 예외 caught: " + e.getMessage());
+        }
+
+        a.a5(); // 모든 예외 한 번에 처리
+    }
+}
+=======================
+	package exc1;
+
+public class B {
+    void b() {
+        System.out.println("B.b() 호출됨");
+    }
+}
+========================
+package exc1;
+
+public class Nike extends Exception {
+    public Nike(String message) {
+        super(message);
+    }
+}
 
